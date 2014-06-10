@@ -1,19 +1,15 @@
 draw.io project sources
 -----------------------
 
-```Ada
 draw.io comprises three parts:
-```
 
 1) The static web content under the war directory.
 2) The open, save, embed, proxy and iconfinder servlets as one servlet war. These are located under src/com/mxgraph/online/.
 3) The image export servlet. This is located under etc/imageexport.
 
-```Agda
 Prior to invoking any builds, search war/index.html for "CUSTOM_PARAMETERS". The image export URL is the most important variable to change (EXPORT_URL). 
 Without that the export to image will use our server, which somewhat defeats the point of hosting it. The servlet is mapped to "export" and the default name 
 of the war is "Imageexport" so "/Imageexport/export" is the value if you deploy that war as-is and the servlet engine is on the root of the domain.
-```
 
 /etc/build/build.xml is the ant build file for the main war. Invoking "war" will generate build/draw.war.
 
